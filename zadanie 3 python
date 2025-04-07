@@ -1,0 +1,22 @@
+# Pobranie liczby ocen od użytkownika
+liczba_ocen = int(input("Ile ocen chcesz wprowadzić? "))
+
+suma_ocen = 0
+
+for i in range(liczba_ocen):
+    ocena = float(input(f"Podaj ocenę {i + 1}: "))
+    if ocena < 1 or ocena > 6:
+        print("Ocena spoza skali 1–6. Spróbuj ponownie.")
+        exit()
+    suma_ocen += ocena
+
+srednia = suma_ocen / liczba_ocen
+
+# Wyświetlenie wyniku
+print(f"Średnia: {srednia:.2f}")
+
+# Sprawdzenie, czy uczeń zaliczył
+if srednia >= 3.0:
+    print("Uczeń zdał.")
+else:
+    print("Uczeń nie zdał.")
